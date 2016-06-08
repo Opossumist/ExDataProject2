@@ -21,9 +21,10 @@ t <- nei %>%
 png("plot1.png")
 plot(total.pm25~year, data=t,
      main="Total PM2.5 Emissions by Year",
-     ylab="Total PM2.5 Emissions",
+     ylab="Total PM2.5 Emissions (tons)",
      xlab="Year",
      pch=16)
 abline(lm(total.pm25~year, data=t),
        lty=2)
 dev.off()
+rm(nei, t)

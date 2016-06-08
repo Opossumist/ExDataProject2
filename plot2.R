@@ -20,9 +20,10 @@ t <- nei[nei$fips=="24510",] %>%
 png("plot2.png")
 plot(total.pm25~year, data=t,
      main="Total PM2.5 Emissions by Year in Baltimore City",
-     ylab="Total PM2.5 Emissions",
+     ylab="Total PM2.5 Emissions (tons)",
      xlab="Year",
      pch=16)
 abline(lm(total.pm25~year, data=t),
        lty=2)
 dev.off()
+rm(nei, t)
