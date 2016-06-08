@@ -1,7 +1,7 @@
 if (!file.exists("summarySCC_PM25.rds")) {
   url <- "https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2FNEI_data.zip"
-  download.file(url, data.zip, method = "curl")
-  unzip (data.zip)}
+  download.file(url, "data.zip", method = "curl")
+  unzip("data.zip")}
 if (!library(dplyr, logical.return = TRUE)){
   install.packages("dplyr")
   library(dplyr)}
