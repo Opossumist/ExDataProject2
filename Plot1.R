@@ -8,7 +8,6 @@ if (!library(dplyr, logical.return = TRUE)){
   library(dplyr)}
 
 nei <- readRDS("summarySCC_PM25.rds")
-#scc <- readRDS("Source_Classification_Code.rds")
 
 # Have total emissions from PM2.5 decreased in the United States from 1999 to 2008?
 # Using the base plotting system, make a plot showing the total PM2.5 emission from
@@ -25,5 +24,6 @@ plot(total.pm25~year, data=t,
      ylab="Total PM2.5 Emmsions",
      xlab="Year",
      pch=16)
-abline(lm(total.pm25~year, data=t))
+abline(lm(total.pm25~year, data=t),
+       lty=2)
 dev.off()
