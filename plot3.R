@@ -16,11 +16,12 @@ nei <- readRDS("summarySCC_PM25.rds")
 # which of these four sources have seen decreases in emissions from 1999–2008 for Baltimore City? 
 # Which have seen increases in emissions from 1999–2008? Use the ggplot2 plotting system to make a plot answer this question.
 
+# Isolate data for Baltimore
 t <- nei[nei$fips=="24510",] %>% 
   group_by(year, type) %>% 
   summarize(total.pm25=sum(Emissions))
 
-# Open the device, plot the graph, and close the device.
+# Construct and save graph
 g <- ggplot(data=t, aes(year, total.pm25))
 g <- g + labs(x="Year", y="Total Emissions (tons)") 
 g <- g + ggtitle("PM2.5 in Baltimore by Type")
