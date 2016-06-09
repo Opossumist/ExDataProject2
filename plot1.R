@@ -20,8 +20,8 @@ t <- nei %>%
 # Open the device, plot the graph, and close the device.
 png("plot1.png")
 plot(total.pm25~year, data=t,
-     main="Total PM2.5 Emissions by Year",
-     ylab="Total PM2.5 Emissions (tons)",
+     main="Plot 1 - Total PM2.5 Emissions of US by Year",
+     ylab="PM2.5 Emissions (tons)",
      xlab="Year",
      pch=16)
 abline(lm(total.pm25~year, data=t),

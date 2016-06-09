@@ -12,6 +12,7 @@ nei <- readRDS("summarySCC_PM25.rds")
 # Have total emissions from PM2.5 decreased in the Baltimore City, Maryland (𝚏𝚒𝚙𝚜 == "𝟸𝟺𝟻𝟷𝟶") 
 # from 1999 to 2008? Use the base plotting system to make a plot answering this question.
 
+# Isolate Baltimore data
 t <- nei[nei$fips=="24510",] %>% 
   group_by(year) %>% 
   summarize(total.pm25=sum(Emissions))
@@ -19,7 +20,7 @@ t <- nei[nei$fips=="24510",] %>%
 # Open the device, plot the graph, and close the device.
 png("plot2.png")
 plot(total.pm25~year, data=t,
-     main="Total PM2.5 Emissions by Year in Baltimore City",
+     main="Plot 2 - Total PM2.5 Emissions in Baltimore City by Year",
      ylab="Total PM2.5 Emissions (tons)",
      xlab="Year",
      pch=16)

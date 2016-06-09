@@ -24,8 +24,9 @@ t <- nei[nei$fips=="24510",] %>%
 # Construct and save graph
 g <- ggplot(data=t, aes(year, total.pm25))
 g <- g + labs(x="Year", y="Total Emissions (tons)") 
-g <- g + ggtitle("PM2.5 in Baltimore by Type")
-g <- g + geom_point() 
+g <- g + ggtitle("Plot 3 - PM2.5 Emissions in Baltimore by Type")
+g <- g + geom_point()
+g <- g + scale_y_continuous(limits=c(0,NA))
 g <- g + stat_smooth(method="lm") 
 g <- g + facet_wrap(~type)
 ggsave("plot3.png", plot=g, device="png")
